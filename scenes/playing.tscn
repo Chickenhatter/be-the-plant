@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ckcq52kstolb1"]
+
+[ext_resource type="Script" uid="uid://bqckrwifspbco" path="res://code/photosynthesis.gd" id="1_43x5a"]
+[ext_resource type="Script" uid="uid://dqykvng1mu162" path="res://scenes/code.gd" id="2_ipk2s"]
+[ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/white.png" id="2_tircx"]
+[ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
+
+[node name="Node2D" type="Node2D" unique_id=672523669]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1794764819]
+
+[node name="Stomata" type="Node2D" parent="Node2D" unique_id=633645827]
+
+[node name="Roots" type="Node2D" parent="Node2D" unique_id=1707003189]
+
+[node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
+
+[node name="Mushroom" type="Node2D" parent="Node2D" unique_id=1649870987]
+
+[node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
+script = ExtResource("1_43x5a")
+
+[node name="Button" type="Button" parent="Node2D/Photosynthesis" unique_id=241801789]
+offset_right = 142.0
+offset_bottom = 79.0
+
+[node name="scale_view" type="Node2D" parent="Node2D" unique_id=1101841502]
+script = ExtResource("2_ipk2s")
+
+[node name="Node2D" type="Node2D" parent="Node2D/scale_view" unique_id=27748806]
+
+[node name="Node2D" type="Node2D" parent="Node2D/scale_view/Node2D" unique_id=160393128]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/Node2D/Node2D" unique_id=473116055]
+position = Vector2(54, 487.00003)
+scale = Vector2(0.25903615, 0.4355495)
+texture = ExtResource("2_tircx")
+
+[node name="weather" type="Node2D" parent="Node2D" unique_id=939653679]
+script = ExtResource("4_bfoin")
+
+[node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
+
+[connection signal="pressed" from="Node2D/Photosynthesis/Button" to="Node2D/Photosynthesis" method="_on_button_pressed"]
