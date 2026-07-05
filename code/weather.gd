@@ -4,6 +4,7 @@ var weather = 'none'
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	new_weather()
+	new_day()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,5 +41,14 @@ func new_weather():
 	print(weather)
 	Global.temp_bonus = ((float(Global.temperature) / 30))
 	Global.weather = weather
+	if Global.soil < 0:
+		Global.soil = 0
 	await get_tree().create_timer(60).timeout
 	new_weather()
+
+func new_day():
+	Global.day = true
+	await get_tree().create_timer(30).timeout
+	Global.day = false
+	await get_tree().create_timer(30).timeout
+	new_day()

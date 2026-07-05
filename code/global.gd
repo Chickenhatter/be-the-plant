@@ -1,7 +1,8 @@
 extends Node
 
 var temperature = 20
-var soil = 0
+var soil = 0.5
+var day = true
 
 var sunlight = 0.5
 var temp_bonus = 0.5

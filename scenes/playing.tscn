@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ckcq52kstolb1"]
 
 [ext_resource type="Script" uid="uid://bqckrwifspbco" path="res://code/photosynthesis.gd" id="1_43x5a"]
+[ext_resource type="Script" uid="uid://bcdpj7foia8vm" path="res://code/roots.gd" id="1_bfoin"]
+[ext_resource type="Script" uid="uid://chh1lkdja6ohq" path="res://code/stomata.gd" id="1_gfnd1"]
 [ext_resource type="Script" uid="uid://dqykvng1mu162" path="res://scenes/code.gd" id="2_ipk2s"]
 [ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/white.png" id="2_tircx"]
 [ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
@@ -10,8 +12,18 @@
 [node name="Node2D" type="Node2D" parent="." unique_id=1794764819]
 
 [node name="Stomata" type="Node2D" parent="Node2D" unique_id=633645827]
+script = ExtResource("1_gfnd1")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Stomata" unique_id=384347600]
+
+[node name="stomata" type="Button" parent="Node2D/Stomata/Node2D" unique_id=701077594]
+offset_left = 237.0
+offset_top = -5.0
+offset_right = 371.0
+offset_bottom = 82.0
 
 [node name="Roots" type="Node2D" parent="Node2D" unique_id=1707003189]
+script = ExtResource("1_bfoin")
 
 [node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
 
@@ -72,4 +84,5 @@ script = ExtResource("4_bfoin")
 
 [node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
 
+[connection signal="pressed" from="Node2D/Stomata/Node2D/stomata" to="Node2D/Stomata" method="_on_stomata_pressed"]
 [connection signal="pressed" from="Node2D/Photosynthesis/Button" to="Node2D/Photosynthesis" method="_on_button_pressed"]
