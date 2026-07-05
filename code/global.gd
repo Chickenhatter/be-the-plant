@@ -1,6 +1,6 @@
 extends Node
 
-var temperature = 0
+var temperature = 20
 var soil = 0
 
 var sunlight = 0.5
@@ -20,5 +20,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	glucose -= 0.001
-		
+	glucose -= 0.0001

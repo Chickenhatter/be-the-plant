@@ -38,6 +38,7 @@ func new_weather():
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil = 1.2
 	print(weather)
+	Global.temp_bonus = ((float(Global.temperature) / 30))
 	Global.weather = weather
 	await get_tree().create_timer(60).timeout
 	new_weather()

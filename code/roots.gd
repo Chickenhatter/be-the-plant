@@ -8,10 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$nitrogen/nitrogen.scale.y = Global.nitrogen
-	
-	$water/water.scale.y = Global.water
-	
-	$glucose/glucose.scale.y = Global.glucose
-	
-	$carbondioxide/carbondioxide.scale.y = Global.carbondioxide
+	pass

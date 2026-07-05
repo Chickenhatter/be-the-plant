@@ -27,12 +27,43 @@ offset_bottom = 79.0
 [node name="scale_view" type="Node2D" parent="Node2D" unique_id=1101841502]
 script = ExtResource("2_ipk2s")
 
-[node name="Node2D" type="Node2D" parent="Node2D/scale_view" unique_id=27748806]
+[node name="nitrogen" type="Node2D" parent="Node2D/scale_view" unique_id=27748806]
 
-[node name="Node2D" type="Node2D" parent="Node2D/scale_view/Node2D" unique_id=160393128]
+[node name="nitrogen" type="Node2D" parent="Node2D/scale_view/nitrogen" unique_id=160393128]
+position = Vector2(0, 648)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/Node2D/Node2D" unique_id=473116055]
-position = Vector2(54, 487.00003)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/nitrogen/nitrogen" unique_id=473116055]
+position = Vector2(54.000004, -161)
+scale = Vector2(0.25903615, 0.4355495)
+texture = ExtResource("2_tircx")
+
+[node name="water" type="Node2D" parent="Node2D/scale_view" unique_id=848291707]
+
+[node name="water" type="Node2D" parent="Node2D/scale_view/water" unique_id=769832706]
+position = Vector2(187, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/water/water" unique_id=1257602532]
+position = Vector2(54.000004, -161)
+scale = Vector2(0.25903615, 0.4355495)
+texture = ExtResource("2_tircx")
+
+[node name="glucose" type="Node2D" parent="Node2D/scale_view" unique_id=1733317017]
+
+[node name="glucose" type="Node2D" parent="Node2D/scale_view/glucose" unique_id=745929653]
+position = Vector2(370, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/glucose/glucose" unique_id=935106984]
+position = Vector2(54.000004, -161)
+scale = Vector2(0.25903615, 0.4355495)
+texture = ExtResource("2_tircx")
+
+[node name="carbondioxide" type="Node2D" parent="Node2D/scale_view" unique_id=1497284825]
+
+[node name="carbondioxide" type="Node2D" parent="Node2D/scale_view/carbondioxide" unique_id=1911357156]
+position = Vector2(0, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/carbondioxide/carbondioxide" unique_id=1045971966]
+position = Vector2(599, -161)
 scale = Vector2(0.25903615, 0.4355495)
 texture = ExtResource("2_tircx")
 
