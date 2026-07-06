@@ -3,9 +3,80 @@
 [ext_resource type="Script" uid="uid://bqckrwifspbco" path="res://code/photosynthesis.gd" id="1_43x5a"]
 [ext_resource type="Script" uid="uid://bcdpj7foia8vm" path="res://code/roots.gd" id="1_bfoin"]
 [ext_resource type="Script" uid="uid://chh1lkdja6ohq" path="res://code/stomata.gd" id="1_gfnd1"]
+[ext_resource type="Texture2D" uid="uid://c80cexhv7qwcj" path="res://assets/stomata/nj-modified.png" id="2_03hel"]
 [ext_resource type="Script" uid="uid://dqykvng1mu162" path="res://scenes/code.gd" id="2_ipk2s"]
 [ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/white.png" id="2_tircx"]
+[ext_resource type="Texture2D" uid="uid://d0igldc1110mc" path="res://assets/stomata/sg-modified.png" id="3_rq5p2"]
 [ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
+[ext_resource type="Script" uid="uid://d0031de7w20ys" path="res://code/leaves.gd" id="5_ir0cj"]
+[ext_resource type="Script" uid="uid://c6vgmfjvudyn4" path="res://code/mushroom.gd" id="6_oysb3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_03hel")
+}],
+"loop": 1,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rq5p2")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5m13b"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrcul"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spbo0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plfo2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2ynx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blw3f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7g8u7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urpcx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfr0c"]
 
 [node name="Node2D" type="Node2D" unique_id=672523669]
 
@@ -22,12 +93,60 @@ offset_top = -5.0
 offset_right = 371.0
 offset_bottom = 82.0
 
+[node name="stomaimage" type="AnimatedSprite2D" parent="Node2D/Stomata/Node2D" unique_id=725771297]
+position = Vector2(368, 93)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_7xrwy")
+animation = &"open"
+autoplay = "closed"
+
 [node name="Roots" type="Node2D" parent="Node2D" unique_id=1707003189]
 script = ExtResource("1_bfoin")
 
+[node name="Node2D" type="Node2D" parent="Node2D/Roots" unique_id=893098195]
+
 [node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
+script = ExtResource("5_ir0cj")
 
 [node name="Mushroom" type="Node2D" parent="Node2D" unique_id=1649870987]
+script = ExtResource("6_oysb3")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Mushroom" unique_id=1334736749]
+
+[node name="Sprites" type="Node2D" parent="Node2D/Mushroom/Node2D" unique_id=1540982063]
+
+[node name="mush1" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1540338571]
+sprite_frames = SubResource("SpriteFrames_rpb1b")
+animation = &"none"
+autoplay = "none"
+
+[node name="mush2" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1981814866]
+sprite_frames = SubResource("SpriteFrames_5m13b")
+animation = &"none"
+
+[node name="mush3" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1878908471]
+sprite_frames = SubResource("SpriteFrames_nrcul")
+
+[node name="mush4" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1889796639]
+sprite_frames = SubResource("SpriteFrames_spbo0")
+
+[node name="mush5" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1655467492]
+sprite_frames = SubResource("SpriteFrames_plfo2")
+
+[node name="mush6" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1122430850]
+sprite_frames = SubResource("SpriteFrames_a2ynx")
+
+[node name="mush7" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1468115360]
+sprite_frames = SubResource("SpriteFrames_blw3f")
+
+[node name="mush8" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=512775704]
+sprite_frames = SubResource("SpriteFrames_7g8u7")
+
+[node name="mush9" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=984227523]
+sprite_frames = SubResource("SpriteFrames_urpcx")
+
+[node name="mush10" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=413567346]
+sprite_frames = SubResource("SpriteFrames_nfr0c")
 
 [node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
 script = ExtResource("1_43x5a")

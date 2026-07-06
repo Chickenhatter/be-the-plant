@@ -9,10 +9,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if producing_glucose == true:
-		if Global.day == true:
-			Global.water -= (0.001 * Global.sunlight * Global.temp_bonus)
-			Global.carbondioxide -= (0.001 * Global.sunlight * Global.temp_bonus)
-			Global.glucose += (0.001 * Global.sunlight * Global.temp_bonus)
+		if Global.water > 0:
+			if Global.carbondioxide > 0:
+				if Global.day == true:
+					Global.water -= (0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
+					Global.carbondioxide -= (0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
+					Global.glucose += (0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
 
 
 func _on_button_pressed() -> void:
