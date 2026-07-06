@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
 [ext_resource type="Script" uid="uid://d0031de7w20ys" path="res://code/leaves.gd" id="5_ir0cj"]
 [ext_resource type="Script" uid="uid://c6vgmfjvudyn4" path="res://code/mushroom.gd" id="6_oysb3"]
+[ext_resource type="Texture2D" uid="uid://1jrj00j81an5" path="res://icon.svg" id="7_oysb3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -63,20 +64,135 @@ animations = [{
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nrcul"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_spbo0"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_plfo2"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2ynx"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blw3f"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g8u7"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_urpcx"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfr0c"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"mushroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
+size = Vector2(74, 27)
 
 [node name="Node2D" type="Node2D" unique_id=672523669]
 
@@ -123,30 +239,62 @@ autoplay = "none"
 [node name="mush2" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1981814866]
 sprite_frames = SubResource("SpriteFrames_5m13b")
 animation = &"none"
+autoplay = "none"
 
 [node name="mush3" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1878908471]
 sprite_frames = SubResource("SpriteFrames_nrcul")
+animation = &"none"
+autoplay = "none"
 
 [node name="mush4" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1889796639]
 sprite_frames = SubResource("SpriteFrames_spbo0")
+animation = &"none"
 
 [node name="mush5" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1655467492]
 sprite_frames = SubResource("SpriteFrames_plfo2")
+animation = &"none"
 
 [node name="mush6" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1122430850]
 sprite_frames = SubResource("SpriteFrames_a2ynx")
+animation = &"none"
 
 [node name="mush7" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1468115360]
 sprite_frames = SubResource("SpriteFrames_blw3f")
+animation = &"none"
 
 [node name="mush8" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=512775704]
 sprite_frames = SubResource("SpriteFrames_7g8u7")
+animation = &"none"
 
 [node name="mush9" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=984227523]
 sprite_frames = SubResource("SpriteFrames_urpcx")
+animation = &"none"
 
 [node name="mush10" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=413567346]
 sprite_frames = SubResource("SpriteFrames_nfr0c")
+animation = &"none"
+
+[node name="drag" type="Node2D" parent="Node2D/Mushroom" unique_id=1733126504]
+
+[node name="box" type="Node2D" parent="Node2D/Mushroom/drag" unique_id=192704]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Mushroom/drag/box" unique_id=1860062259]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Mushroom/drag/box/CharacterBody2D" unique_id=1225220882]
+polygon = PackedVector2Array(493, 12, 493, 177, 567, 177, 567, 12, 494, 12, 494, 10, 569, 10, 569, 179, 569, 179, 491, 179, 491, 10, 493, 10)
+
+[node name="drag" type="Node2D" parent="Node2D/Mushroom/drag" unique_id=1492647048]
+
+[node name="drag" type="CharacterBody2D" parent="Node2D/Mushroom/drag/drag" unique_id=1800342578]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Mushroom/drag/drag/drag" unique_id=556749434]
+position = Vector2(530, 163.5)
+shape = SubResource("RectangleShape2D_rpb1b")
+
+[node name="Icon" type="Sprite2D" parent="Node2D/Mushroom/drag/drag/drag" unique_id=978532584]
+position = Vector2(530, 163.00002)
+scale = Vector2(0.578125, 0.21875)
+texture = ExtResource("7_oysb3")
 
 [node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
 script = ExtResource("1_43x5a")
@@ -204,4 +352,8 @@ script = ExtResource("4_bfoin")
 [node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
 
 [connection signal="pressed" from="Node2D/Stomata/Node2D/stomata" to="Node2D/Stomata" method="_on_stomata_pressed"]
+[connection signal="mouse_entered" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_exited"]
+[connection signal="mouse_shape_entered" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_shape_exited"]
 [connection signal="pressed" from="Node2D/Photosynthesis/Button" to="Node2D/Photosynthesis" method="_on_button_pressed"]
