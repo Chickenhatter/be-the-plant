@@ -192,7 +192,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
-size = Vector2(74, 27)
+size = Vector2(73, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oysb3"]
+size = Vector2(73, 139)
 
 [node name="Node2D" type="Node2D" unique_id=672523669]
 
@@ -284,17 +287,26 @@ animation = &"none"
 polygon = PackedVector2Array(493, 12, 493, 177, 567, 177, 567, 12, 494, 12, 494, 10, 569, 10, 569, 179, 569, 179, 491, 179, 491, 10, 493, 10)
 
 [node name="drag" type="Node2D" parent="Node2D/Mushroom/drag" unique_id=1492647048]
+position = Vector2(530, 160)
 
 [node name="drag" type="CharacterBody2D" parent="Node2D/Mushroom/drag/drag" unique_id=1800342578]
+position = Vector2(-530, -160)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Mushroom/drag/drag/drag" unique_id=556749434]
-position = Vector2(530, 163.5)
+position = Vector2(530, 163)
 shape = SubResource("RectangleShape2D_rpb1b")
 
 [node name="Icon" type="Sprite2D" parent="Node2D/Mushroom/drag/drag/drag" unique_id=978532584]
-position = Vector2(530, 163.00002)
-scale = Vector2(0.578125, 0.21875)
+position = Vector2(530, 163)
+scale = Vector2(0.5703125, 0.21093743)
 texture = ExtResource("7_oysb3")
+
+[node name="drag2" type="Area2D" parent="Node2D/Mushroom/drag/drag" unique_id=327174318]
+position = Vector2(-530, -155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Mushroom/drag/drag/drag2" unique_id=1485074880]
+position = Vector2(530, 89.5)
+shape = SubResource("RectangleShape2D_oysb3")
 
 [node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
 script = ExtResource("1_43x5a")
@@ -356,4 +368,6 @@ script = ExtResource("4_bfoin")
 [connection signal="mouse_exited" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_exited"]
 [connection signal="mouse_shape_entered" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_shape_exited"]
+[connection signal="mouse_entered" from="Node2D/Mushroom/drag/drag/drag2" to="Node2D/Mushroom" method="_on_drag_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Mushroom/drag/drag/drag2" to="Node2D/Mushroom" method="_on_drag_mouse_exited"]
 [connection signal="pressed" from="Node2D/Photosynthesis/Button" to="Node2D/Photosynthesis" method="_on_button_pressed"]

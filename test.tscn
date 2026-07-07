@@ -14,4 +14,11 @@ script = ExtResource("1_37kl0")
 position = Vector2(320, 299)
 shape = SubResource("RectangleShape2D_7xrwy")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1675675935]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1019301249]
+position = Vector2(320, 299)
+shape = SubResource("RectangleShape2D_7xrwy")
+
 [connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

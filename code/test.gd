@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_character_body_2d_mouse_entered() -> void:
 	print('neter')
+
+
+func _on_area_2d_mouse_entered() -> void:
+	print('sneter')
