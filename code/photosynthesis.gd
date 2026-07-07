@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 				if Global.day == true:
 					Global.water -= (0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
 					Global.carbondioxide -= (0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
-					Global.glucose += (0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
+					Global.glucose += 10*(0.001 * Global.sunlight * Global.temp_bonus * Global.leaf_scale)
 
 
 func _on_button_pressed() -> void:

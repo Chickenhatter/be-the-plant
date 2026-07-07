@@ -31,6 +31,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
+size = Vector2(73, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oysb3"]
+size = Vector2(73, 139)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
 animations = [{
 "frames": [],
@@ -191,12 +197,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpb1b"]
-size = Vector2(73, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oysb3"]
-size = Vector2(73, 139)
-
 [node name="Node2D" type="Node2D" unique_id=672523669]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1794764819]
@@ -226,6 +226,44 @@ script = ExtResource("1_bfoin")
 
 [node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
 script = ExtResource("5_ir0cj")
+
+[node name="drag" type="Node2D" parent="Node2D/Plant" unique_id=318901929]
+position = Vector2(93, 0)
+
+[node name="box" type="Node2D" parent="Node2D/Plant/drag" unique_id=589037600]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Plant/drag/box" unique_id=1697722810]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Plant/drag/box/CharacterBody2D" unique_id=266802372]
+polygon = PackedVector2Array(493, 12, 493, 177, 567, 177, 567, 12, 494, 12, 494, 10, 569, 10, 569, 179, 569, 179, 491, 179, 491, 10, 493, 10)
+
+[node name="drag" type="Node2D" parent="Node2D/Plant/drag" unique_id=1021246602]
+position = Vector2(530, 160)
+
+[node name="drag" type="CharacterBody2D" parent="Node2D/Plant/drag/drag" unique_id=306531010]
+position = Vector2(-530, -160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Plant/drag/drag/drag" unique_id=1218930153]
+position = Vector2(530, 163)
+shape = SubResource("RectangleShape2D_rpb1b")
+
+[node name="Icon" type="Sprite2D" parent="Node2D/Plant/drag/drag/drag" unique_id=498334648]
+position = Vector2(530, 163)
+scale = Vector2(0.5703125, 0.21093743)
+texture = ExtResource("7_oysb3")
+
+[node name="drag2" type="Area2D" parent="Node2D/Plant/drag/drag" unique_id=2076586332]
+position = Vector2(-530, -155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Plant/drag/drag/drag2" unique_id=1550154524]
+position = Vector2(530, 89.5)
+shape = SubResource("RectangleShape2D_oysb3")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Plant/drag/drag" unique_id=1228479720]
+position = Vector2(-31, -130)
+
+[node name="Node2D" type="Node2D" parent="Node2D/Plant" unique_id=1890242711]
+position = Vector2(592, 30)
 
 [node name="Mushroom" type="Node2D" parent="Node2D" unique_id=1649870987]
 script = ExtResource("6_oysb3")
@@ -308,6 +346,9 @@ position = Vector2(-530, -155)
 position = Vector2(530, 89.5)
 shape = SubResource("RectangleShape2D_oysb3")
 
+[node name="Node2D" type="Node2D" parent="Node2D/Mushroom/drag/drag" unique_id=2080388572]
+position = Vector2(-31, -130)
+
 [node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
 script = ExtResource("1_43x5a")
 
@@ -364,6 +405,8 @@ script = ExtResource("4_bfoin")
 [node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
 
 [connection signal="pressed" from="Node2D/Stomata/Node2D/stomata" to="Node2D/Stomata" method="_on_stomata_pressed"]
+[connection signal="mouse_entered" from="Node2D/Plant/drag/drag/drag2" to="Node2D/Plant" method="_on_drag_2_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Plant/drag/drag/drag2" to="Node2D/Plant" method="_on_drag_2_mouse_exited"]
 [connection signal="mouse_entered" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_exited"]
 [connection signal="mouse_shape_entered" from="Node2D/Mushroom/drag/drag/drag" to="Node2D/Mushroom" method="_on_drag_mouse_shape_entered"]

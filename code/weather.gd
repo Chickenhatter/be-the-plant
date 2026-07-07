@@ -43,12 +43,12 @@ func new_weather():
 	Global.weather = weather
 	if Global.soil < 0:
 		Global.soil = 0
-	await get_tree().create_timer(60).timeout
+	await get_tree().create_timer(30).timeout
 	new_weather()
 
 func new_day():
 	Global.day = true
-	await get_tree().create_timer(30).timeout
+	await get_tree().create_timer(20).timeout
 	Global.day = false
-	await get_tree().create_timer(30).timeout
+	await get_tree().create_timer(20).timeout
 	new_day()
