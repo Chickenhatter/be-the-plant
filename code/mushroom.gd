@@ -1,9 +1,10 @@
 extends Node2D
+var prev_mushroom = 0.1
 var mushroom = 0.1
 var indrag = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	mush_num_change()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,6 +28,8 @@ func _process(delta: float) -> void:
 	
 	Global.nitrogen += (mushroom * 0.001)
 	Global.glucose -= (mushroom * 0.001)
+	if prev_mushroom != mushroom:
+		mush_num_change()
 
 func mush_num_change():
 	if mushroom > 0:
@@ -78,7 +81,7 @@ func mush_num_change():
 		$Node2D/Sprites/mush10.play('mushroom')
 	else:
 		$Node2D/Sprites/mush10.play('none')
-	
+	prev_mushroom = mushroom
 
 func _on_drag_mouse_entered() -> void:
 	indrag = true

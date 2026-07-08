@@ -262,6 +262,18 @@ script = ExtResource("1_bfoin")
 [node name="dirt" type="Node2D" parent="Node2D/Roots/Node2D" unique_id=1612269010]
 
 [node name="shade" type="Sprite2D" parent="Node2D/Roots/Node2D/dirt" unique_id=1587695758]
+self_modulate = Color(0.08413305, 0.045628466, 0.0018441568, 1)
+z_index = 2
+position = Vector2(555.625, 597)
+scale = Vector2(3.9343374, 0.37449113)
+texture = ExtResource("2_tircx")
+
+[node name="shade2" type="Sprite2D" parent="Node2D/Roots/Node2D/dirt" unique_id=2007504898]
+self_modulate = Color(0.58274186, 0.40825707, 0, 1)
+z_index = 1
+position = Vector2(555.625, 597)
+scale = Vector2(3.9343374, 0.37449113)
+texture = ExtResource("2_tircx")
 
 [node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
 script = ExtResource("5_ir0cj")
@@ -307,8 +319,9 @@ position = Vector2(592, 30)
 [node name="Node2D" type="Node2D" parent="Node2D/Plant/sprites" unique_id=863213742]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/Node2D" unique_id=1432701501]
+z_index = 5
 position = Vector2(-47.000008, 285)
-scale = Vector2(0.215, 0.215)
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("7_bn2xy")
 
 [node name="Mushroom" type="Node2D" parent="Node2D" unique_id=1649870987]
@@ -317,52 +330,71 @@ script = ExtResource("6_oysb3")
 [node name="Node2D" type="Node2D" parent="Node2D/Mushroom" unique_id=1334736749]
 
 [node name="Sprites" type="Node2D" parent="Node2D/Mushroom/Node2D" unique_id=1540982063]
-position = Vector2(-1499, -510)
+z_index = 5
+position = Vector2(492, 414)
+scale = Vector2(0.06, 0.06)
 
 [node name="mush1" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1540338571]
+position = Vector2(-116.666664, 166.66666)
 sprite_frames = SubResource("SpriteFrames_rpb1b")
 animation = &"mushroom"
 autoplay = "none"
 
 [node name="mush2" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1981814866]
+z_index = 1
+position = Vector2(-66.666664, -150)
 sprite_frames = SubResource("SpriteFrames_5m13b")
 animation = &"mushroom"
 autoplay = "none"
 
 [node name="mush3" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1878908471]
+position = Vector2(833.3333, 183.33333)
 sprite_frames = SubResource("SpriteFrames_nrcul")
 animation = &"mushroom"
 autoplay = "none"
 flip_h = true
 
 [node name="mush4" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1889796639]
+z_index = 1
+position = Vector2(666.6666, -50)
 sprite_frames = SubResource("SpriteFrames_spbo0")
 animation = &"mushroom"
 flip_h = true
 
 [node name="mush5" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1655467492]
+position = Vector2(266.6667, -266.66663)
+rotation = -5.7176986
 sprite_frames = SubResource("SpriteFrames_plfo2")
 animation = &"mushroom"
 
 [node name="mush6" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1122430850]
+z_index = -1
+position = Vector2(0, -816.6666)
 sprite_frames = SubResource("SpriteFrames_a2ynx")
 animation = &"mushroom"
 
 [node name="mush7" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1468115360]
+position = Vector2(550, -383.3333)
 sprite_frames = SubResource("SpriteFrames_blw3f")
 animation = &"mushroom"
 flip_h = true
 
 [node name="mush8" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=512775704]
+z_index = -2
+position = Vector2(516.6666, -833.3333)
 sprite_frames = SubResource("SpriteFrames_7g8u7")
 animation = &"mushroom"
 flip_h = true
 
 [node name="mush9" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=984227523]
+z_index = -2
+position = Vector2(-33.33333, -1200)
 sprite_frames = SubResource("SpriteFrames_urpcx")
 animation = &"mushroom"
 
 [node name="mush10" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=413567346]
+z_index = -1
+position = Vector2(366.66666, -1200)
 sprite_frames = SubResource("SpriteFrames_nfr0c")
 animation = &"mushroom"
 flip_h = true
@@ -459,8 +491,8 @@ script = ExtResource("4_bfoin")
 [node name="Node2D2" type="Node2D" parent="Node2D/weather" unique_id=1394946349]
 
 [node name="sm" type="Node2D" parent="Node2D/weather/Node2D2" unique_id=1547058964]
-z_index = 101
-position = Vector2(583, 327)
+z_index = 1
+position = Vector2(600, 459)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/weather/Node2D2/sm" unique_id=1703317400]
 position = Vector2(323.99997, 41.999996)

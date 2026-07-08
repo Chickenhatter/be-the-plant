@@ -12,8 +12,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(yellow)
-	print(abs(((sin((time*2*PI)/(40)))/(0.309016994375))))
 	time += delta
 	if abs(((sin((time*2*PI)/(40)))/(0.309016994375))) > 1:
 		if (sin((time*2*PI)/(40)))/(0.309016994375) > 0:
