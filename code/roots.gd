@@ -10,3 +10,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if roots_in == true:
 		Global.water += (0.00005 * Global.soil)
+	$Node2D/dirt/shade.self_modulate.a = (Global.soil/3)

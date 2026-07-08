@@ -10,7 +10,12 @@
 [ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
 [ext_resource type="Script" uid="uid://d0031de7w20ys" path="res://code/leaves.gd" id="5_ir0cj"]
 [ext_resource type="Script" uid="uid://c6vgmfjvudyn4" path="res://code/mushroom.gd" id="6_oysb3"]
+[ext_resource type="Texture2D" uid="uid://dl1f0yu6tsr0c" path="res://assets/eukaryote/tree-modified.png" id="7_bn2xy"]
 [ext_resource type="Texture2D" uid="uid://1jrj00j81an5" path="res://icon.svg" id="7_oysb3"]
+[ext_resource type="Texture2D" uid="uid://dy4ohk87bhow1" path="res://assets/eukaryote/wefs-modified.png" id="9_w0yuy"]
+[ext_resource type="Texture2D" uid="uid://cp0j331d502uv" path="res://assets/eukaryote/yhu-modified.png" id="10_jpwfx"]
+[ext_resource type="Texture2D" uid="uid://c7a7supe8rwb7" path="res://assets/sky/moon.png" id="12_0bln8"]
+[ext_resource type="Texture2D" uid="uid://7c1f6wbm74jo" path="res://assets/sky/sun.png" id="13_t3r78"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -39,7 +44,10 @@ size = Vector2(73, 139)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w0yuy")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -55,7 +63,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5m13b"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jpwfx")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -71,7 +82,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nrcul"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w0yuy")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -87,7 +101,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_spbo0"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jpwfx")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -103,7 +120,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_plfo2"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w0yuy")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -119,7 +139,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2ynx"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jpwfx")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -135,7 +158,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blw3f"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w0yuy")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -151,7 +177,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g8u7"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jpwfx")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -167,7 +196,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_urpcx"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w0yuy")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -183,7 +215,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfr0c"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jpwfx")
+}],
 "loop": 1,
 "name": &"mushroom",
 "speed": 5.0
@@ -224,6 +259,10 @@ script = ExtResource("1_bfoin")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Roots" unique_id=893098195]
 
+[node name="dirt" type="Node2D" parent="Node2D/Roots/Node2D" unique_id=1612269010]
+
+[node name="shade" type="Sprite2D" parent="Node2D/Roots/Node2D/dirt" unique_id=1587695758]
+
 [node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
 script = ExtResource("5_ir0cj")
 
@@ -262,8 +301,15 @@ shape = SubResource("RectangleShape2D_oysb3")
 [node name="Node2D" type="Node2D" parent="Node2D/Plant/drag/drag" unique_id=1228479720]
 position = Vector2(-31, -130)
 
-[node name="Node2D" type="Node2D" parent="Node2D/Plant" unique_id=1890242711]
+[node name="sprites" type="Node2D" parent="Node2D/Plant" unique_id=1890242711]
 position = Vector2(592, 30)
+
+[node name="Node2D" type="Node2D" parent="Node2D/Plant/sprites" unique_id=863213742]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/Node2D" unique_id=1432701501]
+position = Vector2(-47.000008, 285)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("7_bn2xy")
 
 [node name="Mushroom" type="Node2D" parent="Node2D" unique_id=1649870987]
 script = ExtResource("6_oysb3")
@@ -271,49 +317,55 @@ script = ExtResource("6_oysb3")
 [node name="Node2D" type="Node2D" parent="Node2D/Mushroom" unique_id=1334736749]
 
 [node name="Sprites" type="Node2D" parent="Node2D/Mushroom/Node2D" unique_id=1540982063]
+position = Vector2(-1499, -510)
 
 [node name="mush1" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1540338571]
 sprite_frames = SubResource("SpriteFrames_rpb1b")
-animation = &"none"
+animation = &"mushroom"
 autoplay = "none"
 
 [node name="mush2" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1981814866]
 sprite_frames = SubResource("SpriteFrames_5m13b")
-animation = &"none"
+animation = &"mushroom"
 autoplay = "none"
 
 [node name="mush3" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1878908471]
 sprite_frames = SubResource("SpriteFrames_nrcul")
-animation = &"none"
+animation = &"mushroom"
 autoplay = "none"
+flip_h = true
 
 [node name="mush4" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1889796639]
 sprite_frames = SubResource("SpriteFrames_spbo0")
-animation = &"none"
+animation = &"mushroom"
+flip_h = true
 
 [node name="mush5" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1655467492]
 sprite_frames = SubResource("SpriteFrames_plfo2")
-animation = &"none"
+animation = &"mushroom"
 
 [node name="mush6" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1122430850]
 sprite_frames = SubResource("SpriteFrames_a2ynx")
-animation = &"none"
+animation = &"mushroom"
 
 [node name="mush7" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=1468115360]
 sprite_frames = SubResource("SpriteFrames_blw3f")
-animation = &"none"
+animation = &"mushroom"
+flip_h = true
 
 [node name="mush8" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=512775704]
 sprite_frames = SubResource("SpriteFrames_7g8u7")
-animation = &"none"
+animation = &"mushroom"
+flip_h = true
 
 [node name="mush9" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=984227523]
 sprite_frames = SubResource("SpriteFrames_urpcx")
-animation = &"none"
+animation = &"mushroom"
 
 [node name="mush10" type="AnimatedSprite2D" parent="Node2D/Mushroom/Node2D/Sprites" unique_id=413567346]
 sprite_frames = SubResource("SpriteFrames_nfr0c")
-animation = &"none"
+animation = &"mushroom"
+flip_h = true
 
 [node name="drag" type="Node2D" parent="Node2D/Mushroom" unique_id=1733126504]
 
@@ -403,6 +455,42 @@ texture = ExtResource("2_tircx")
 script = ExtResource("4_bfoin")
 
 [node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
+
+[node name="Node2D2" type="Node2D" parent="Node2D/weather" unique_id=1394946349]
+
+[node name="sm" type="Node2D" parent="Node2D/weather/Node2D2" unique_id=1547058964]
+z_index = 101
+position = Vector2(583, 327)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/weather/Node2D2/sm" unique_id=1703317400]
+position = Vector2(323.99997, 41.999996)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_0bln8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/weather/Node2D2/sm" unique_id=1958645379]
+position = Vector2(-471.99997, 51.999996)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_t3r78")
+
+[node name="daylight" type="Node2D" parent="Node2D/weather/Node2D2" unique_id=594207109]
+
+[node name="yellow" type="Sprite2D" parent="Node2D/weather/Node2D2/daylight" unique_id=1716974600]
+self_modulate = Color(1, 0.80784315, 0, 0.2509804)
+position = Vector2(529, 319)
+scale = Vector2(3.6012049, 1)
+texture = ExtResource("2_tircx")
+
+[node name="day" type="Sprite2D" parent="Node2D/weather/Node2D2/daylight" unique_id=136679099]
+self_modulate = Color(0, 0.62587, 1.6406357, 0)
+position = Vector2(546.00006, 345)
+scale = Vector2(3.526506, 1.0725915)
+texture = ExtResource("2_tircx")
+
+[node name="night" type="Sprite2D" parent="Node2D/weather/Node2D2/daylight" unique_id=1440232185]
+self_modulate = Color(0.050980393, 0.09411765, 0.22745098, 0)
+position = Vector2(513, 321.75)
+scale = Vector2(3.7481928, 1.1051561)
+texture = ExtResource("2_tircx")
 
 [connection signal="pressed" from="Node2D/Stomata/Node2D/stomata" to="Node2D/Stomata" method="_on_stomata_pressed"]
 [connection signal="mouse_entered" from="Node2D/Plant/drag/drag/drag2" to="Node2D/Plant" method="_on_drag_2_mouse_entered"]
