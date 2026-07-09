@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if indrag == true:
 			var direction = $drag/drag/drag/Icon.global_position.direction_to((get_global_mouse_position()))
-			$drag/drag/drag.velocity = direction * 200
+			$drag/drag/drag.velocity = direction * 300
 			if $drag/drag/drag/Icon.global_position.distance_to((get_global_mouse_position())) < 0:
 				$drag/drag/drag.velocity = Vector2.ZERO
 		else:

@@ -5,17 +5,19 @@
 [ext_resource type="Script" uid="uid://chh1lkdja6ohq" path="res://code/stomata.gd" id="1_gfnd1"]
 [ext_resource type="Texture2D" uid="uid://c80cexhv7qwcj" path="res://assets/stomata/nj-modified.png" id="2_03hel"]
 [ext_resource type="Script" uid="uid://dqykvng1mu162" path="res://scenes/code.gd" id="2_ipk2s"]
-[ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/white.png" id="2_tircx"]
+[ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/other/white.png" id="2_tircx"]
 [ext_resource type="Texture2D" uid="uid://d0igldc1110mc" path="res://assets/stomata/sg-modified.png" id="3_rq5p2"]
 [ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
 [ext_resource type="Script" uid="uid://d0031de7w20ys" path="res://code/leaves.gd" id="5_ir0cj"]
 [ext_resource type="Script" uid="uid://c6vgmfjvudyn4" path="res://code/mushroom.gd" id="6_oysb3"]
 [ext_resource type="Texture2D" uid="uid://dl1f0yu6tsr0c" path="res://assets/eukaryote/tree-modified.png" id="7_bn2xy"]
 [ext_resource type="Texture2D" uid="uid://1jrj00j81an5" path="res://icon.svg" id="7_oysb3"]
+[ext_resource type="Texture2D" uid="uid://c65r5yc7mhcc1" path="res://assets/eukaryote/leaf-modified.png" id="9_jpwfx"]
 [ext_resource type="Texture2D" uid="uid://dy4ohk87bhow1" path="res://assets/eukaryote/wefs-modified.png" id="9_w0yuy"]
 [ext_resource type="Texture2D" uid="uid://cp0j331d502uv" path="res://assets/eukaryote/yhu-modified.png" id="10_jpwfx"]
 [ext_resource type="Texture2D" uid="uid://c7a7supe8rwb7" path="res://assets/sky/moon.png" id="12_0bln8"]
 [ext_resource type="Texture2D" uid="uid://7c1f6wbm74jo" path="res://assets/sky/sun.png" id="13_t3r78"]
+[ext_resource type="Texture2D" uid="uid://desq1joh47i3d" path="res://assets/other/tube.png" id="15_jpwfx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -40,7 +42,7 @@ animations = [{
 size = Vector2(73, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oysb3"]
-size = Vector2(73, 139)
+size = Vector2(73, 159)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
 animations = [{
@@ -237,6 +239,7 @@ animations = [{
 [node name="Node2D" type="Node2D" parent="." unique_id=1794764819]
 
 [node name="Stomata" type="Node2D" parent="Node2D" unique_id=633645827]
+z_index = 20
 script = ExtResource("1_gfnd1")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Stomata" unique_id=384347600]
@@ -255,6 +258,7 @@ animation = &"open"
 autoplay = "closed"
 
 [node name="Roots" type="Node2D" parent="Node2D" unique_id=1707003189]
+z_index = 20
 script = ExtResource("1_bfoin")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Roots" unique_id=893098195]
@@ -276,10 +280,11 @@ scale = Vector2(3.9343374, 0.37449113)
 texture = ExtResource("2_tircx")
 
 [node name="Plant" type="Node2D" parent="Node2D" unique_id=1059676600]
+z_index = 20
 script = ExtResource("5_ir0cj")
 
 [node name="drag" type="Node2D" parent="Node2D/Plant" unique_id=318901929]
-position = Vector2(93, 0)
+position = Vector2(551, 9)
 
 [node name="box" type="Node2D" parent="Node2D/Plant/drag" unique_id=589037600]
 
@@ -316,15 +321,140 @@ position = Vector2(-31, -130)
 [node name="sprites" type="Node2D" parent="Node2D/Plant" unique_id=1890242711]
 position = Vector2(592, 30)
 
-[node name="Node2D" type="Node2D" parent="Node2D/Plant/sprites" unique_id=863213742]
+[node name="main" type="Node2D" parent="Node2D/Plant/sprites" unique_id=863213742]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/Node2D" unique_id=1432701501]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/main" unique_id=1432701501]
 z_index = 5
 position = Vector2(-47.000008, 285)
 scale = Vector2(0.27, 0.27)
 texture = ExtResource("7_bn2xy")
 
+[node name="root" type="Node2D" parent="Node2D/Plant/sprites" unique_id=1562988561]
+
+[node name="leaves" type="Node2D" parent="Node2D/Plant/sprites" unique_id=2089514254]
+
+[node name="leaf1" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=1157024922]
+position = Vector2(54, 241)
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf1" unique_id=690551889]
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf1/control" unique_id=2072241096]
+z_index = 5
+position = Vector2(275, 416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+
+[node name="leaf2" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=1817297380]
+position = Vector2(38, 109)
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf2" unique_id=1597062645]
+rotation = -1.1702499
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf2/control" unique_id=1362497544]
+z_index = 5
+position = Vector2(275, 416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+
+[node name="leaf3" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=636796385]
+position = Vector2(-9, 58)
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf3" unique_id=417839313]
+rotation = -1.1702499
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf3/control" unique_id=2091786137]
+z_index = 5
+position = Vector2(275, 416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+
+[node name="leaf4" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=1901266709]
+position = Vector2(-202, 300)
+rotation = -3.5901423
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf4" unique_id=1389032998]
+rotation = -0.32478765
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf4/control" unique_id=2010300019]
+z_index = 5
+position = Vector2(478.5141, -102.6416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+flip_h = true
+
+[node name="leaf5" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=690452580]
+position = Vector2(-230, 229)
+rotation = -3.5901423
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf5" unique_id=547159196]
+rotation = 0.056784183
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf5/control" unique_id=426830725]
+z_index = 5
+position = Vector2(478.5141, -102.6416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+flip_h = true
+
+[node name="leaf6" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=147865150]
+position = Vector2(-248, 136)
+rotation = -3.5901423
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf6" unique_id=1254084902]
+rotation = 0.056784183
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf6/control" unique_id=342575019]
+z_index = 5
+position = Vector2(478.5141, -102.6416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+flip_h = true
+
+[node name="leaf7" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=1192680180]
+position = Vector2(-207, 43.000008)
+rotation = -3.5901423
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf7" unique_id=388267930]
+rotation = 0.8415439
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf7/control" unique_id=1216639693]
+z_index = 5
+position = Vector2(478.5141, -102.6416)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+flip_h = true
+
+[node name="leaf8" type="Node2D" parent="Node2D/Plant/sprites/leaves" unique_id=944276370]
+position = Vector2(-76, 100.00001)
+rotation = -3.5901423
+
+[node name="control" type="Node2D" parent="Node2D/Plant/sprites/leaves/leaf8" unique_id=1227809461]
+rotation = 1.9580654
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/sprites/leaves/leaf8/control" unique_id=1141583891]
+z_index = 5
+position = Vector2(272.5902, 413.82373)
+rotation = 1.9646969
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("9_jpwfx")
+
 [node name="Mushroom" type="Node2D" parent="Node2D" unique_id=1649870987]
+z_index = 20
 script = ExtResource("6_oysb3")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Mushroom" unique_id=1334736749]
@@ -400,6 +530,7 @@ animation = &"mushroom"
 flip_h = true
 
 [node name="drag" type="Node2D" parent="Node2D/Mushroom" unique_id=1733126504]
+position = Vector2(448, 10)
 
 [node name="box" type="Node2D" parent="Node2D/Mushroom/drag" unique_id=192704]
 
@@ -434,6 +565,7 @@ shape = SubResource("RectangleShape2D_oysb3")
 position = Vector2(-31, -130)
 
 [node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
+z_index = 20
 script = ExtResource("1_43x5a")
 
 [node name="Button" type="Button" parent="Node2D/Photosynthesis" unique_id=241801789]
@@ -441,37 +573,55 @@ offset_right = 142.0
 offset_bottom = 79.0
 
 [node name="scale_view" type="Node2D" parent="Node2D" unique_id=1101841502]
+z_index = 40
 script = ExtResource("2_ipk2s")
 
 [node name="nitrogen" type="Node2D" parent="Node2D/scale_view" unique_id=27748806]
 
 [node name="nitrogen" type="Node2D" parent="Node2D/scale_view/nitrogen" unique_id=160393128]
-position = Vector2(0, 648)
+position = Vector2(41, 627)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/nitrogen/nitrogen" unique_id=473116055]
-position = Vector2(54.000004, -161)
-scale = Vector2(0.25903615, 0.4355495)
+self_modulate = Color(0, 0.40392157, 0, 1)
+position = Vector2(27.125004, -102.75)
+scale = Vector2(0.12951808, 0.27747622)
 texture = ExtResource("2_tircx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/nitrogen" unique_id=987812760]
+position = Vector2(118, 567.00006)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_jpwfx")
 
 [node name="water" type="Node2D" parent="Node2D/scale_view" unique_id=848291707]
 
 [node name="water" type="Node2D" parent="Node2D/scale_view/water" unique_id=769832706]
-position = Vector2(187, 648)
+position = Vector2(198, 628)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/water/water" unique_id=1257602532]
-position = Vector2(54.000004, -161)
-scale = Vector2(0.25903615, 0.4355495)
+self_modulate = Color(0, 0.54901963, 1, 1)
+position = Vector2(27.625006, -102.75)
+scale = Vector2(0.13192771, 0.27747625)
 texture = ExtResource("2_tircx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/water" unique_id=1434469676]
+position = Vector2(276, 568)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_jpwfx")
 
 [node name="glucose" type="Node2D" parent="Node2D/scale_view" unique_id=1733317017]
 
 [node name="glucose" type="Node2D" parent="Node2D/scale_view/glucose" unique_id=745929653]
-position = Vector2(370, 648)
+position = Vector2(311, 628)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/glucose/glucose" unique_id=935106984]
-position = Vector2(54.000004, -161)
-scale = Vector2(0.25903615, 0.4355495)
+position = Vector2(27.125006, -102.75002)
+scale = Vector2(0.12951809, 0.27747625)
 texture = ExtResource("2_tircx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/glucose" unique_id=1420299355]
+position = Vector2(388, 568)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_jpwfx")
 
 [node name="carbondioxide" type="Node2D" parent="Node2D/scale_view" unique_id=1497284825]
 
@@ -484,6 +634,7 @@ scale = Vector2(0.25903615, 0.4355495)
 texture = ExtResource("2_tircx")
 
 [node name="weather" type="Node2D" parent="Node2D" unique_id=939653679]
+z_index = 10
 script = ExtResource("4_bfoin")
 
 [node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
