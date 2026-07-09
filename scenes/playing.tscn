@@ -240,6 +240,7 @@ animations = [{
 
 [node name="Stomata" type="Node2D" parent="Node2D" unique_id=633645827]
 z_index = 20
+position = Vector2(-199, 146)
 script = ExtResource("1_gfnd1")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Stomata" unique_id=384347600]
@@ -566,6 +567,7 @@ position = Vector2(-31, -130)
 
 [node name="Photosynthesis" type="Node2D" parent="Node2D" unique_id=1808275932]
 z_index = 20
+position = Vector2(34, 24)
 script = ExtResource("1_43x5a")
 
 [node name="Button" type="Button" parent="Node2D/Photosynthesis" unique_id=241801789]
@@ -574,6 +576,7 @@ offset_bottom = 79.0
 
 [node name="scale_view" type="Node2D" parent="Node2D" unique_id=1101841502]
 z_index = 40
+position = Vector2(784, -10)
 script = ExtResource("2_ipk2s")
 
 [node name="nitrogen" type="Node2D" parent="Node2D/scale_view" unique_id=27748806]
@@ -593,6 +596,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_jpwfx")
 
 [node name="water" type="Node2D" parent="Node2D/scale_view" unique_id=848291707]
+position = Vector2(-2, -1)
 
 [node name="water" type="Node2D" parent="Node2D/scale_view/water" unique_id=769832706]
 position = Vector2(198, 628)
@@ -609,6 +613,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_jpwfx")
 
 [node name="glucose" type="Node2D" parent="Node2D/scale_view" unique_id=1733317017]
+position = Vector2(-36, -1)
 
 [node name="glucose" type="Node2D" parent="Node2D/scale_view/glucose" unique_id=745929653]
 position = Vector2(311, 628)
@@ -624,14 +629,21 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_jpwfx")
 
 [node name="carbondioxide" type="Node2D" parent="Node2D/scale_view" unique_id=1497284825]
+position = Vector2(-294, -1)
 
 [node name="carbondioxide" type="Node2D" parent="Node2D/scale_view/carbondioxide" unique_id=1911357156]
-position = Vector2(0, 648)
+position = Vector2(414, 628)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/carbondioxide/carbondioxide" unique_id=1045971966]
-position = Vector2(599, -161)
-scale = Vector2(0.25903615, 0.4355495)
+self_modulate = Color(0.8666667, 0.654902, 0, 1)
+position = Vector2(26.49998, -102.50001)
+scale = Vector2(0.12771086, 0.2781546)
 texture = ExtResource("2_tircx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/scale_view/carbondioxide" unique_id=1381444013]
+position = Vector2(490, 568)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_jpwfx")
 
 [node name="weather" type="Node2D" parent="Node2D" unique_id=939653679]
 z_index = 10

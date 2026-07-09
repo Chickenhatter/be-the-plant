@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 		$Node2D2/daylight/night.self_modulate.a += delta/5
 	elif $Node2D2/daylight/night.self_modulate.a > 0 and night == false:
 		$Node2D2/daylight/night.self_modulate.a -= delta/5
+	print(Global.day)
 
 func new_weather():
 	weather = randi_range(1,10)
@@ -80,7 +81,9 @@ func new_weather():
 
 func new_day():
 	Global.day = true
-	await get_tree().create_timer(20).timeout
+	await get_tree().create_timer(22).timeout
 	Global.day = false
-	await get_tree().create_timer(20).timeout
+	await get_tree().create_timer(16).timeout
+	Global.day = true
+	await get_tree().create_timer(2).timeout
 	new_day()

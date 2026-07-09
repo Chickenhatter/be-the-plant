@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 	else:
 		Global.leaf_scale = 0.1
 		
-	print(Global.leaf_scale)
 
 func leaf_change():
 	$sprites/leaves/leaf1.scale.y = Global.leaf_scale

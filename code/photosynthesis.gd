@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	if producing_glucose == true:
+		print('press_true')
 		producing_glucose = false
 	elif producing_glucose == false:
+		print('press_false')
 		producing_glucose = true
