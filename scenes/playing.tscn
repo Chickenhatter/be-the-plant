@@ -17,7 +17,16 @@
 [ext_resource type="Texture2D" uid="uid://cp0j331d502uv" path="res://assets/eukaryote/yhu-modified.png" id="10_jpwfx"]
 [ext_resource type="Texture2D" uid="uid://c7a7supe8rwb7" path="res://assets/sky/moon.png" id="12_0bln8"]
 [ext_resource type="Texture2D" uid="uid://7c1f6wbm74jo" path="res://assets/sky/sun.png" id="13_t3r78"]
+[ext_resource type="Texture2D" uid="uid://ciu48andondk2" path="res://assets/enzymebutton/ca.png" id="14_ubupi"]
+[ext_resource type="Texture2D" uid="uid://cmvs0g7eaqvc8" path="res://assets/enzymebutton/aabase.png" id="14_yxpij"]
+[ext_resource type="Texture2D" uid="uid://bjy783b00w4vx" path="res://assets/enzymebutton/cb.png" id="15_58x3g"]
 [ext_resource type="Texture2D" uid="uid://desq1joh47i3d" path="res://assets/other/tube.png" id="15_jpwfx"]
+[ext_resource type="Texture2D" uid="uid://d30d3ui1t7fdo" path="res://assets/enzymebutton/ba.png" id="15_wv4xg"]
+[ext_resource type="Texture2D" uid="uid://bx5ai6pxgv8vm" path="res://assets/enzymebutton/bb.png" id="16_jxg5o"]
+[ext_resource type="Texture2D" uid="uid://bwyshxf4yw58x" path="res://assets/enzymebutton/cc.png" id="16_qj1jd"]
+[ext_resource type="Texture2D" uid="uid://c2h0nqw7edmby" path="res://assets/enzymebutton/bc.png" id="17_xax4h"]
+[ext_resource type="Texture2D" uid="uid://cwgem1sycpjel" path="res://assets/enzymebutton/cd.png" id="17_yjqeg"]
+[ext_resource type="Texture2D" uid="uid://54lqmywa14l7" path="res://assets/enzymebutton/bd.png" id="18_ubupi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -234,6 +243,54 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_j65nl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ubupi")
+}],
+"loop": 1,
+"name": &"add_block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_58x3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qj1jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yjqeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qj1jd")
+}],
+"loop": 1,
+"name": &"blocker",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_yxpij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wv4xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jxg5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xax4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ubupi")
+}],
+"loop": 1,
+"name": &"no_blocker",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=672523669]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1794764819]
@@ -246,6 +303,7 @@ script = ExtResource("1_gfnd1")
 [node name="Node2D" type="Node2D" parent="Node2D/Stomata" unique_id=384347600]
 
 [node name="stomata" type="Button" parent="Node2D/Stomata/Node2D" unique_id=701077594]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 237.0
 offset_top = -5.0
 offset_right = 371.0
@@ -571,8 +629,18 @@ position = Vector2(34, 24)
 script = ExtResource("1_43x5a")
 
 [node name="Button" type="Button" parent="Node2D/Photosynthesis" unique_id=241801789]
-offset_right = 142.0
-offset_bottom = 79.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 136.0
+offset_bottom = 86.0
+
+[node name="enzymeanimated" type="AnimatedSprite2D" parent="Node2D/Photosynthesis" unique_id=320629880]
+position = Vector2(70, 59.999996)
+scale = Vector2(0.18, 0.18)
+sprite_frames = SubResource("SpriteFrames_j65nl")
+animation = &"add_block"
+autoplay = "add_block"
 
 [node name="scale_view" type="Node2D" parent="Node2D" unique_id=1101841502]
 z_index = 40
