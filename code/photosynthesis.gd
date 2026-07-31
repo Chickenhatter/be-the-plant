@@ -21,6 +21,9 @@ func _on_button_pressed() -> void:
 	if producing_glucose == true:
 		producing_glucose = false
 		$enzymeanimated.play("add_block")
-		await get_tree()
+		await get_tree().create_timer(0.5).timeout
+		$enzymeanimated.play("blocker")
 	elif producing_glucose == false:
 		producing_glucose = true
+		$enzymeanimated.play("no_blocker")
+		

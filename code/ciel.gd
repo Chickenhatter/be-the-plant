@@ -1,6 +1,4 @@
 extends Node2D
-
-
 var weather = 'none'
 var time = 0
 var yellow = false
@@ -53,26 +51,31 @@ func new_weather():
 		weather = 'sunlight'
 		Global.sunlight = 0.7
 		Global.temperature = 5 + randi_range(10,20)
+		cloud_off()
 	elif weather == 5 or weather == 9:
 		weather = 'stronglight'
 		Global.sunlight = 1
 		Global.temperature = 10 + randi_range(10,20)
 		Global.soil -= 0.1
+		cloud_off()
 	elif weather == 6:
 		weather = 'lightrain'
 		Global.sunlight = 0.4
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil = 1
+		cloud_on()
 	elif weather == 7:
 		weather = 'cloudy'
 		Global.sunlight = 0.4
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil += 0.1
+		cloud_on()
 	elif weather == 8 or weather == 10:
 		weather = 'stormy'
 		Global.sunlight = 0.1
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil = 1.2
+		cloud_on()
 	print(weather)
 	Global.temp_bonus = ((float(Global.temperature) / 30))
 	Global.weather = weather
@@ -90,15 +93,15 @@ func new_day():
 	await get_tree().create_timer(2).timeout
 	new_day()
 
-func cloud_off():
-	$clouds/Node2d/cloud1.play('on')
-	$clouds/Node2d/cloud2.play('on')
-	$clouds/Node2d/cloud3.play('on')
-	$clouds/Node2d/cloud4.play('on')
-	$clouds/Node2d/cloud5.play('on')
 func cloud_on():
-	$clouds/Node2d/cloud1.play('off')
-	$clouds/Node2d/cloud2.play('off')
-	$clouds/Node2d/cloud3.play('off')
-	$clouds/Node2d/cloud4.play('off')
-	$clouds/Node2d/cloud5.play('off')
+	$clouds/Node2D/cloud1.play('on')
+	$clouds/Node2D/cloud2.play('on')
+	$clouds/Node2D/cloud3.play('on')
+	$clouds/Node2D/cloud4.play('on')
+	$clouds/Node2D/cloud5.play('on')
+func cloud_off():
+	$clouds/Node2D/cloud1.play('off')
+	$clouds/Node2D/cloud2.play('off')
+	$clouds/Node2D/cloud3.play('off')
+	$clouds/Node2D/cloud4.play('off')
+	$clouds/Node2D/cloud5.play('off')

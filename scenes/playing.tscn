@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://dqykvng1mu162" path="res://scenes/code.gd" id="2_ipk2s"]
 [ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/other/white.png" id="2_tircx"]
 [ext_resource type="Texture2D" uid="uid://d0igldc1110mc" path="res://assets/stomata/sg-modified.png" id="3_rq5p2"]
-[ext_resource type="Script" uid="uid://bxup3dj10ab07" path="res://code/weather.gd" id="4_bfoin"]
 [ext_resource type="Script" uid="uid://d0031de7w20ys" path="res://code/leaves.gd" id="5_ir0cj"]
 [ext_resource type="Script" uid="uid://c6vgmfjvudyn4" path="res://code/mushroom.gd" id="6_oysb3"]
 [ext_resource type="Texture2D" uid="uid://dl1f0yu6tsr0c" path="res://assets/eukaryote/tree-modified.png" id="7_bn2xy"]
@@ -27,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://c2h0nqw7edmby" path="res://assets/enzymebutton/bc.png" id="17_xax4h"]
 [ext_resource type="Texture2D" uid="uid://cwgem1sycpjel" path="res://assets/enzymebutton/cd.png" id="17_yjqeg"]
 [ext_resource type="Texture2D" uid="uid://54lqmywa14l7" path="res://assets/enzymebutton/bd.png" id="18_ubupi"]
+[ext_resource type="Script" uid="uid://grr1fisyiin7" path="res://code/ciel.gd" id="25_58x3g"]
+[ext_resource type="Texture2D" uid="uid://5pkdf1cma6v" path="res://assets/sky/cloud.png" id="26_58x3g"]
+[ext_resource type="Texture2D" uid="uid://bq3x2h7qhnj2t" path="res://assets/sky/rain.png" id="27_qj1jd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -268,7 +270,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"blocker",
-"speed": 1.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -288,6 +290,44 @@ animations = [{
 }],
 "loop": 1,
 "name": &"no_blocker",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jagq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_58x3g")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cs7cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_qj1jd")
+}],
+"loop": 1,
+"name": &"on",
 "speed": 5.0
 }]
 
@@ -639,7 +679,7 @@ offset_bottom = 86.0
 position = Vector2(70, 59.999996)
 scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_j65nl")
-animation = &"add_block"
+animation = &"no_blocker"
 autoplay = "add_block"
 
 [node name="scale_view" type="Node2D" parent="Node2D" unique_id=1101841502]
@@ -715,14 +755,121 @@ texture = ExtResource("15_jpwfx")
 
 [node name="weather" type="Node2D" parent="Node2D" unique_id=939653679]
 z_index = 10
-script = ExtResource("4_bfoin")
+script = ExtResource("25_58x3g")
 
-[node name="Node2D" type="Node2D" parent="Node2D/weather" unique_id=737207413]
+[node name="clouds" type="Node2D" parent="Node2D/weather" unique_id=737207413]
+
+[node name="Node2D" type="Node2D" parent="Node2D/weather/clouds" unique_id=1432428441]
+z_index = 6
+
+[node name="cloud1" type="AnimatedSprite2D" parent="Node2D/weather/clouds/Node2D" unique_id=6833150]
+position = Vector2(111.99988, 43)
+scale = Vector2(0.1485, 0.1215)
+sprite_frames = SubResource("SpriteFrames_8jagq")
+animation = &"on"
+
+[node name="cloud2" type="AnimatedSprite2D" parent="Node2D/weather/clouds/Node2D" unique_id=1717760307]
+position = Vector2(348.00003, -14)
+scale = Vector2(0.1485, 0.1215)
+sprite_frames = SubResource("SpriteFrames_8jagq")
+animation = &"on"
+
+[node name="cloud3" type="AnimatedSprite2D" parent="Node2D/weather/clouds/Node2D" unique_id=750409595]
+position = Vector2(757.00006, 20)
+scale = Vector2(0.1485, 0.1215)
+sprite_frames = SubResource("SpriteFrames_8jagq")
+animation = &"on"
+
+[node name="cloud4" type="AnimatedSprite2D" parent="Node2D/weather/clouds/Node2D" unique_id=1751881536]
+position = Vector2(1015.0001, 32)
+scale = Vector2(0.1485, 0.1215)
+sprite_frames = SubResource("SpriteFrames_8jagq")
+animation = &"on"
+
+[node name="cloud5" type="AnimatedSprite2D" parent="Node2D/weather/clouds/Node2D" unique_id=41248056]
+position = Vector2(526.00006, 77)
+scale = Vector2(0.1485, 0.1215)
+sprite_frames = SubResource("SpriteFrames_8jagq")
+animation = &"on"
+
+[node name="rain" type="Node2D" parent="Node2D/weather/clouds" unique_id=318178345]
+
+[node name="rain1" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=1085313035]
+position = Vector2(360.99988, 252.99994)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain2" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=31808471]
+position = Vector2(1276, 181)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain3" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=1658281241]
+position = Vector2(548, 202)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain4" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=188976806]
+position = Vector2(1042.0001, 257)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain5" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=1875632381]
+position = Vector2(871.0001, 270)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain6" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=310577438]
+position = Vector2(682.0002, 396)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain7" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=1145422093]
+position = Vector2(427.00018, 444.99997)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain8" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=987843631]
+position = Vector2(204.00003, 271)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain9" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=1639792860]
+position = Vector2(250.00024, 461.99997)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain10" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=207181756]
+position = Vector2(945.0001, 551)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain11" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=477269187]
+position = Vector2(1240.0001, 470.99997)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
+
+[node name="rain12" type="AnimatedSprite2D" parent="Node2D/weather/clouds/rain" unique_id=1978586595]
+position = Vector2(1057.0001, 540)
+scale = Vector2(0.406, 0.327)
+sprite_frames = SubResource("SpriteFrames_cs7cw")
+animation = &"on"
 
 [node name="Node2D2" type="Node2D" parent="Node2D/weather" unique_id=1394946349]
 
 [node name="sm" type="Node2D" parent="Node2D/weather/Node2D2" unique_id=1547058964]
-z_index = 1
+z_index = 5
 position = Vector2(600, 459)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/weather/Node2D2/sm" unique_id=1703317400]
@@ -751,7 +898,8 @@ texture = ExtResource("2_tircx")
 
 [node name="night" type="Sprite2D" parent="Node2D/weather/Node2D2/daylight" unique_id=1440232185]
 self_modulate = Color(0.050980393, 0.09411765, 0.22745098, 0)
-position = Vector2(513, 321.75)
+z_index = 7
+position = Vector2(506, 344)
 scale = Vector2(3.7481928, 1.1051561)
 texture = ExtResource("2_tircx")
 
