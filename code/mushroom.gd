@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	else:
 		$drag/drag/drag.velocity = Vector2.ZERO
 	$drag/drag/drag.move_and_slide()
-	
+	$drag/box/Node2D.scale.y = mushroom
 	Global.nitrogen += (mushroom * 0.001)
 	Global.glucose -= (mushroom * 0.001)
 	if prev_mushroom != mushroom:

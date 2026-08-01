@@ -4,6 +4,7 @@ var time = 0
 var yellow = false
 var night = false
 var day = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	new_weather()
@@ -13,7 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time += delta
-	if abs(((sin((time*2*PI)/(40)))/(0.309016994375))) > 1:
+	if abs(((sin((time*2*PI)/(40)))/(0.309016994375))) > 0.5:
 		if (sin((time*2*PI)/(40)))/(0.309016994375) > 0:
 			day = true
 			night = false
@@ -44,6 +45,7 @@ func _process(delta: float) -> void:
 		$Node2D2/daylight/night.self_modulate.a -= delta/5
 
 func new_weather():
+	cloud_light()
 	cloud_off()
 	weather = randi_range(1,10)
 	Global.soil -= 0.1
@@ -52,30 +54,36 @@ func new_weather():
 		Global.sunlight = 0.7
 		Global.temperature = 5 + randi_range(10,20)
 		cloud_off()
+		rain_off()
 	elif weather == 5 or weather == 9:
 		weather = 'stronglight'
 		Global.sunlight = 1
 		Global.temperature = 10 + randi_range(10,20)
 		Global.soil -= 0.1
 		cloud_off()
+		rain_off()
 	elif weather == 6:
 		weather = 'lightrain'
 		Global.sunlight = 0.4
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil = 1
 		cloud_on()
+		rain_on()
 	elif weather == 7:
 		weather = 'cloudy'
 		Global.sunlight = 0.4
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil += 0.1
 		cloud_on()
+		rain_off()
 	elif weather == 8 or weather == 10:
 		weather = 'stormy'
 		Global.sunlight = 0.1
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil = 1.2
 		cloud_on()
+		cloud_dark()
+		rain_on()
 	print(weather)
 	Global.temp_bonus = ((float(Global.temperature) / 30))
 	Global.weather = weather
@@ -105,3 +113,45 @@ func cloud_off():
 	$clouds/Node2D/cloud3.play('off')
 	$clouds/Node2D/cloud4.play('off')
 	$clouds/Node2D/cloud5.play('off')
+
+func rain_on():
+	$clouds/rain/rain1.play('on')
+	$clouds/rain/rain2.play('on')
+	$clouds/rain/rain3.play('on')
+	$clouds/rain/rain4.play('on')
+	$clouds/rain/rain5.play('on')
+	$clouds/rain/rain6.play('on')
+	$clouds/rain/rain7.play('on')
+	$clouds/rain/rain8.play('on')
+	$clouds/rain/rain9.play('on')
+	$clouds/rain/rain10.play('on')
+	$clouds/rain/rain11.play('on')
+	$clouds/rain/rain12.play('on')
+
+func rain_off():
+	$clouds/rain/rain1.play('off')
+	$clouds/rain/rain2.play('off')
+	$clouds/rain/rain3.play('off')
+	$clouds/rain/rain4.play('off')
+	$clouds/rain/rain5.play('off')
+	$clouds/rain/rain6.play('off')
+	$clouds/rain/rain7.play('off')
+	$clouds/rain/rain8.play('off')
+	$clouds/rain/rain9.play('off')
+	$clouds/rain/rain10.play('off')
+	$clouds/rain/rain11.play('off')
+	$clouds/rain/rain12.play('off')
+
+func cloud_dark():
+	$clouds/Node2D/cloud1.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
+	$clouds/Node2D/cloud2.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
+	$clouds/Node2D/cloud3.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
+	$clouds/Node2D/cloud4.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
+	$clouds/Node2D/cloud5.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
+
+func cloud_light():
+	$clouds/Node2D/cloud1.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud2.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud3.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud4.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud5.self_modulate = Color(1.0, 1.0, 1.0, 1.0)

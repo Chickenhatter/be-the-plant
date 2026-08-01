@@ -15,7 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dy4ohk87bhow1" path="res://assets/eukaryote/wefs-modified.png" id="9_w0yuy"]
 [ext_resource type="Texture2D" uid="uid://cp0j331d502uv" path="res://assets/eukaryote/yhu-modified.png" id="10_jpwfx"]
 [ext_resource type="Texture2D" uid="uid://c7a7supe8rwb7" path="res://assets/sky/moon.png" id="12_0bln8"]
+[ext_resource type="Texture2D" uid="uid://cfkpvsl3oq0f8" path="res://assets/eukaryote/slider/root.png" id="13_608e4"]
 [ext_resource type="Texture2D" uid="uid://7c1f6wbm74jo" path="res://assets/sky/sun.png" id="13_t3r78"]
+[ext_resource type="Texture2D" uid="uid://dmymouasv4mmf" path="res://assets/eukaryote/slider/mush_cap.png" id="13_yjqeg"]
+[ext_resource type="Texture2D" uid="uid://dtf5ckyd0m0f5" path="res://assets/eukaryote/slider/stem.png" id="14_cugxx"]
 [ext_resource type="Texture2D" uid="uid://ciu48andondk2" path="res://assets/enzymebutton/ca.png" id="14_ubupi"]
 [ext_resource type="Texture2D" uid="uid://cmvs0g7eaqvc8" path="res://assets/enzymebutton/aabase.png" id="14_yxpij"]
 [ext_resource type="Texture2D" uid="uid://bjy783b00w4vx" path="res://assets/enzymebutton/cb.png" id="15_58x3g"]
@@ -332,6 +335,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=672523669]
+metadata/_edit_vertical_guides_ = [1111.0]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1794764819]
 
@@ -638,6 +642,19 @@ position = Vector2(448, 10)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Mushroom/drag/box/CharacterBody2D" unique_id=1225220882]
 polygon = PackedVector2Array(493, 12, 493, 177, 567, 177, 567, 12, 494, 12, 494, 10, 569, 10, 569, 179, 569, 179, 491, 179, 491, 10, 493, 10)
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Mushroom/drag/box" unique_id=806349686]
+position = Vector2(568, 228)
+scale = Vector2(0.22250004, 0.37100002)
+texture = ExtResource("13_608e4")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Mushroom/drag/box" unique_id=1633845688]
+position = Vector2(528, 178)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Mushroom/drag/box/Node2D" unique_id=514506914]
+position = Vector2(42.999985, -35)
+scale = Vector2(0.26099998, 0.33025)
+texture = ExtResource("14_cugxx")
+
 [node name="drag" type="Node2D" parent="Node2D/Mushroom/drag" unique_id=1492647048]
 position = Vector2(530, 160)
 
@@ -649,9 +666,9 @@ position = Vector2(530, 163)
 shape = SubResource("RectangleShape2D_rpb1b")
 
 [node name="Icon" type="Sprite2D" parent="Node2D/Mushroom/drag/drag/drag" unique_id=978532584]
-position = Vector2(530, 163)
-scale = Vector2(0.5703125, 0.21093743)
-texture = ExtResource("7_oysb3")
+position = Vector2(549.00006, 169)
+scale = Vector2(0.10807811, 0.10023436)
+texture = ExtResource("13_yjqeg")
 
 [node name="drag2" type="Area2D" parent="Node2D/Mushroom/drag/drag" unique_id=327174318]
 position = Vector2(-530, -155)
@@ -870,7 +887,7 @@ animation = &"on"
 
 [node name="sm" type="Node2D" parent="Node2D/weather/Node2D2" unique_id=1547058964]
 z_index = 5
-position = Vector2(600, 459)
+position = Vector2(509, 473)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/weather/Node2D2/sm" unique_id=1703317400]
 position = Vector2(323.99997, 41.999996)
