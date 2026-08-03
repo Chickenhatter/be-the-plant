@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://d0igldc1110mc" path="res://assets/stomata/sg-modified.png" id="3_rq5p2"]
 [ext_resource type="Script" uid="uid://d0031de7w20ys" path="res://code/leaves.gd" id="5_ir0cj"]
 [ext_resource type="Script" uid="uid://c6vgmfjvudyn4" path="res://code/mushroom.gd" id="6_oysb3"]
+[ext_resource type="Texture2D" uid="uid://dnwduok6guklr" path="res://assets/eukaryote/leafider/wall-modified.png" id="7_608e4"]
 [ext_resource type="Texture2D" uid="uid://dl1f0yu6tsr0c" path="res://assets/eukaryote/tree-modified.png" id="7_bn2xy"]
-[ext_resource type="Texture2D" uid="uid://1jrj00j81an5" path="res://icon.svg" id="7_oysb3"]
+[ext_resource type="Texture2D" uid="uid://dy13o87qwvmtt" path="res://assets/eukaryote/leafider/cell_wall-modified.png" id="8_cugxx"]
+[ext_resource type="Texture2D" uid="uid://d35xfttekbsn" path="res://assets/eukaryote/leafider/chloroplast-modified.png" id="9_d2ubn"]
 [ext_resource type="Texture2D" uid="uid://c65r5yc7mhcc1" path="res://assets/eukaryote/leaf-modified.png" id="9_jpwfx"]
 [ext_resource type="Texture2D" uid="uid://dy4ohk87bhow1" path="res://assets/eukaryote/wefs-modified.png" id="9_w0yuy"]
 [ext_resource type="Texture2D" uid="uid://cp0j331d502uv" path="res://assets/eukaryote/yhu-modified.png" id="10_jpwfx"]
@@ -57,6 +59,25 @@ size = Vector2(73, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oysb3"]
 size = Vector2(73, 159)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8am3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_d2ubn")
+}],
+"loop": 1,
+"name": &"chloroplast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpb1b"]
 animations = [{
@@ -406,10 +427,13 @@ position = Vector2(-530, -160)
 position = Vector2(530, 163)
 shape = SubResource("RectangleShape2D_rpb1b")
 
-[node name="Icon" type="Sprite2D" parent="Node2D/Plant/drag/drag/drag" unique_id=498334648]
-position = Vector2(530, 163)
-scale = Vector2(0.5703125, 0.21093743)
-texture = ExtResource("7_oysb3")
+[node name="Icon" type="Node2D" parent="Node2D/Plant/drag/drag/drag" unique_id=1307430335]
+position = Vector2(530, 160)
+
+[node name="Icon" type="Sprite2D" parent="Node2D/Plant/drag/drag/drag/Icon" unique_id=498334648]
+position = Vector2(31, 127)
+scale = Vector2(0.116156235, 0.20298436)
+texture = ExtResource("7_608e4")
 
 [node name="drag2" type="Area2D" parent="Node2D/Plant/drag/drag" unique_id=2076586332]
 position = Vector2(-530, -155)
@@ -419,7 +443,27 @@ position = Vector2(530, 89.5)
 shape = SubResource("RectangleShape2D_oysb3")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Plant/drag/drag" unique_id=1228479720]
-position = Vector2(-31, -130)
+position = Vector2(-26, -125)
+
+[node name="images" type="Node2D" parent="Node2D/Plant/drag/drag" unique_id=1750824014]
+position = Vector2(0, 17)
+
+[node name="change" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=1296724245]
+position = Vector2(-1, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/drag/drag/images/change" unique_id=355644956]
+position = Vector2(32, -33)
+scale = Vector2(0.117, 0.19681251)
+texture = ExtResource("8_cugxx")
+
+[node name="chloro1" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=12958183]
+position = Vector2(20, -19)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro1" unique_id=21146265]
+position = Vector2(36, 49.000004)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
 
 [node name="sprites" type="Node2D" parent="Node2D/Plant" unique_id=1890242711]
 position = Vector2(592, 30)

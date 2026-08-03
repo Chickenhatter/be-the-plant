@@ -37,7 +37,13 @@ func _process(delta: float) -> void:
 		Global.nitrogen -= (0.001*float(Global.leaf_scale))
 	else:
 		Global.leaf_scale = 0.1
-		
+	$drag/drag/images/change.scale.y = Global.leaf_scale
+	print(($drag/drag/drag/Icon.global_position.y + 10)-$drag/drag/images/chloro1.position.y)
+	if ($drag/drag/drag/Icon.global_position.y + 10) < $drag/drag/images/chloro1.position.y:
+		$drag/drag/images/chloro1/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro1/chlor.play('none')
+
 
 func leaf_change():
 	$sprites/leaves/leaf1.scale.y = Global.leaf_scale
