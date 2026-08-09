@@ -452,15 +452,30 @@ position = Vector2(0, 17)
 position = Vector2(-1, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Plant/drag/drag/images/change" unique_id=355644956]
-position = Vector2(32, -33)
+position = Vector2(32, -30)
 scale = Vector2(0.117, 0.19681251)
 texture = ExtResource("8_cugxx")
 
 [node name="chloro1" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=12958183]
-position = Vector2(20, -19)
+position = Vector2(23, -25)
 
-[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro1" unique_id=21146265]
-position = Vector2(36, 49.000004)
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro1" unique_id=1046611332]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro1/chlor" unique_id=410667854]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
+[node name="chloro2" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=2122150320]
+position = Vector2(-18, -42)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro2" unique_id=898042679]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro2/chlor" unique_id=650086472]
+position = Vector2(36, 49)
 scale = Vector2(0.09774997, 0.0995)
 sprite_frames = SubResource("SpriteFrames_8am3s")
 animation = &"chloroplast"
