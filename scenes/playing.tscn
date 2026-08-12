@@ -480,6 +480,78 @@ scale = Vector2(0.09774997, 0.0995)
 sprite_frames = SubResource("SpriteFrames_8am3s")
 animation = &"chloroplast"
 
+[node name="chloro3" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=463796666]
+position = Vector2(6, -64)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro3" unique_id=977852985]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro3/chlor" unique_id=812602817]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
+[node name="chloro4" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=380408438]
+position = Vector2(-23, -106)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro4" unique_id=1674163190]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro4/chlor" unique_id=872866985]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
+[node name="chloro5" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=1998305311]
+position = Vector2(24, -91)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro5" unique_id=438129678]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro5/chlor" unique_id=890640278]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
+[node name="chloro6" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=999761848]
+position = Vector2(12, -123)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro6" unique_id=2043886329]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro6/chlor" unique_id=2116985006]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
+[node name="chloro7" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=1130353690]
+position = Vector2(-14, -135)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro7" unique_id=1304130384]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro7/chlor" unique_id=2077887760]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
+[node name="chloro8" type="Node2D" parent="Node2D/Plant/drag/drag/images" unique_id=142630230]
+position = Vector2(-1, -93)
+
+[node name="chlor" type="Node2D" parent="Node2D/Plant/drag/drag/images/chloro8" unique_id=311610310]
+position = Vector2(0, 4)
+
+[node name="chlor" type="AnimatedSprite2D" parent="Node2D/Plant/drag/drag/images/chloro8/chlor" unique_id=1580093313]
+position = Vector2(36, 49)
+scale = Vector2(0.09774997, 0.0995)
+sprite_frames = SubResource("SpriteFrames_8am3s")
+animation = &"chloroplast"
+
 [node name="sprites" type="Node2D" parent="Node2D/Plant" unique_id=1890242711]
 position = Vector2(592, 30)
 

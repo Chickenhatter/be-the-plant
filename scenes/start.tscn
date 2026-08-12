@@ -1,3 +1,33 @@
 [gd_scene format=3 uid="uid://c88kicqqebm8m"]
 
+[ext_resource type="Texture2D" uid="uid://g2rwhns3b1oa" path="res://assets/other/main_scene.png" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://bjcf1kf52wu1h" path="res://code/buttons.gd" id="2_u80x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe8vo"]
+size = Vector2(131, 85)
+
 [node name="Node2D" type="Node2D" unique_id=1917219208]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1563386337]
+
+[node name="back" type="Node2D" parent="Node2D" unique_id=1860469696]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/back" unique_id=1998090970]
+z_index = -100
+position = Vector2(578, 324)
+scale = Vector2(1.635, 1.635)
+texture = ExtResource("1_jaeev")
+
+[node name="buttons" type="Node2D" parent="Node2D" unique_id=1518946871]
+script = ExtResource("2_u80x2")
+
+[node name="photosynthesis" type="Node2D" parent="Node2D/buttons" unique_id=777680767]
+
+[node name="Glycolysis" type="Area2D" parent="Node2D/buttons/photosynthesis" unique_id=2110126857]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/photosynthesis/Glycolysis" unique_id=403624986]
+position = Vector2(102.5, 61.5)
+shape = SubResource("RectangleShape2D_qe8vo")
+
+[connection signal="mouse_entered" from="Node2D/buttons/photosynthesis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/buttons/photosynthesis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_exited"]

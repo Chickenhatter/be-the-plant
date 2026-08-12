@@ -44,15 +44,7 @@ func _process(delta: float) -> void:
 		Global.leaf_scale = 0.1
 		$drag/drag/drag.position.y = -160.0
 	$drag/drag/images/change.scale.y = Global.leaf_scale
-	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro1.global_position.y:
-		$drag/drag/images/chloro1/chlor/chlor.play('chloroplast')
-	else:
-		$drag/drag/images/chloro1/chlor/chlor.play('none')
-	
-	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro2.global_position.y:
-		$drag/drag/images/chloro2/chlor/chlor.play('chloroplast')
-	else:
-		$drag/drag/images/chloro2/chlor/chlor.play('none')
+	change()
 
 
 func leaf_change():
@@ -93,3 +85,52 @@ func gamesend():
 	tween.tween_property($sprites/main/Sprite2D, "self_modulate", Color(0, 0, 0), 2.0)
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://test.tscn")
+
+
+
+
+
+func change():
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro1.global_position.y:
+		$drag/drag/images/chloro1/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro1/chlor/chlor.play('none')
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro2.global_position.y:
+		$drag/drag/images/chloro2/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro2/chlor/chlor.play('none')
+	
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro3.global_position.y:
+		$drag/drag/images/chloro3/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro3/chlor/chlor.play('none')
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro4.global_position.y:
+		$drag/drag/images/chloro4/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro4/chlor/chlor.play('none')
+	
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro5.global_position.y:
+		$drag/drag/images/chloro5/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro5/chlor/chlor.play('none')
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro6.global_position.y:
+		$drag/drag/images/chloro6/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro6/chlor/chlor.play('none')
+	
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro7.global_position.y:
+		$drag/drag/images/chloro7/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro7/chlor/chlor.play('none')
+	
+	if ($drag/drag/drag/Icon.global_position.y) < $drag/drag/images/chloro8.global_position.y:
+		$drag/drag/images/chloro8/chlor/chlor.play('chloroplast')
+	else:
+		$drag/drag/images/chloro8/chlor/chlor.play('none')
+	
