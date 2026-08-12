@@ -6,6 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe8vo"]
 size = Vector2(131, 85)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u80x2"]
+size = Vector2(82, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bodal"]
+size = Vector2(320, 226)
+
 [node name="Node2D" type="Node2D" unique_id=1917219208]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1563386337]
@@ -21,13 +27,92 @@ texture = ExtResource("1_jaeev")
 [node name="buttons" type="Node2D" parent="Node2D" unique_id=1518946871]
 script = ExtResource("2_u80x2")
 
-[node name="photosynthesis" type="Node2D" parent="Node2D/buttons" unique_id=777680767]
+[node name="glycolysis" type="Node2D" parent="Node2D/buttons" unique_id=777680767]
 
-[node name="Glycolysis" type="Area2D" parent="Node2D/buttons/photosynthesis" unique_id=2110126857]
+[node name="Glycolysis" type="Area2D" parent="Node2D/buttons/glycolysis" unique_id=2110126857]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/photosynthesis/Glycolysis" unique_id=403624986]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/glycolysis/Glycolysis" unique_id=403624986]
 position = Vector2(102.5, 61.5)
 shape = SubResource("RectangleShape2D_qe8vo")
 
-[connection signal="mouse_entered" from="Node2D/buttons/photosynthesis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_entered"]
-[connection signal="mouse_exited" from="Node2D/buttons/photosynthesis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_exited"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/buttons/glycolysis" unique_id=2036190000]
+offset_left = 184.0
+offset_top = 18.0
+offset_right = 400.0
+offset_bottom = 160.0
+mouse_filter = 2
+text = "This turns off and on, when turned on it turns water and carbon dioxide into glucose but the rate of this is affected by weather"
+
+[node name="stomata" type="Node2D" parent="Node2D/buttons" unique_id=1454453363]
+
+[node name="stomata" type="Area2D" parent="Node2D/buttons/stomata" unique_id=621090255]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/stomata/stomata" unique_id=2044457603]
+position = Vector2(102, 180)
+shape = SubResource("RectangleShape2D_qe8vo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/buttons/stomata" unique_id=575010469]
+offset_left = 38.0
+offset_top = 230.0
+offset_right = 254.0
+offset_bottom = 372.0
+mouse_filter = 2
+text = "This turns off and on, when turned on it turns water into carbon dioxide"
+
+[node name="mushroom" type="Node2D" parent="Node2D/buttons" unique_id=1344746668]
+
+[node name="mushroom" type="Area2D" parent="Node2D/buttons/mushroom" unique_id=1250224237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/mushroom/mushroom" unique_id=494706522]
+position = Vector2(993, 184.5)
+shape = SubResource("RectangleShape2D_u80x2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/buttons/mushroom" unique_id=1217262537]
+offset_left = 721.0
+offset_top = 79.0
+offset_right = 937.0
+offset_bottom = 221.0
+mouse_filter = 2
+text = "This is able to be moved by your mouse when holding left click, it will decrease glucose but will increase nitrogen"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Node2D/buttons/mushroom" unique_id=1628475696]
+offset_left = 280.0
+offset_top = 378.0
+offset_right = 496.0
+offset_bottom = 520.0
+mouse_filter = 2
+text = "It spawns this stuff on the trees"
+
+[node name="chloroplast" type="Node2D" parent="Node2D/buttons" unique_id=82329421]
+
+[node name="chloroplast" type="Area2D" parent="Node2D/buttons/chloroplast" unique_id=1013936715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/chloroplast/chloroplast" unique_id=2102060431]
+position = Vector2(1099, 176)
+shape = SubResource("RectangleShape2D_u80x2")
+
+[node name="ttube" type="Node2D" parent="Node2D/buttons" unique_id=1736516438]
+
+[node name="ttube" type="Area2D" parent="Node2D/buttons/ttube" unique_id=1969617213]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/buttons/ttube/ttube" unique_id=606043421]
+position = Vector2(985, 524)
+shape = SubResource("RectangleShape2D_bodal")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/buttons/ttube" unique_id=1950806052]
+offset_left = 184.0
+offset_top = 18.0
+offset_right = 400.0
+offset_bottom = 160.0
+text = "This turns off and on, when turned on it turns water and carbon dioxide into glucose but the rate of this is affected by weather"
+
+[connection signal="mouse_entered" from="Node2D/buttons/glycolysis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/buttons/glycolysis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/buttons/stomata/stomata" to="Node2D/buttons" method="_on_stomata_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/buttons/stomata/stomata" to="Node2D/buttons" method="_on_stomata_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/buttons/mushroom/mushroom" to="Node2D/buttons" method="_on_mushroom_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/buttons/mushroom/mushroom" to="Node2D/buttons" method="_on_mushroom_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/buttons/chloroplast/chloroplast" to="Node2D/buttons" method="_on_chloroplast_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/buttons/chloroplast/chloroplast" to="Node2D/buttons" method="_on_chloroplast_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/buttons/ttube/ttube" to="Node2D/buttons" method="_on_ttube_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/buttons/ttube/ttube" to="Node2D/buttons" method="_on_ttube_mouse_exited"]
