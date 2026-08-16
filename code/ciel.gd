@@ -47,6 +47,7 @@ func _process(delta: float) -> void:
 func new_weather():
 	cloud_light()
 	cloud_off()
+	soundset()
 	weather = randi_range(1,10)
 	Global.soil -= 0.1
 	if weather <= 4:
@@ -62,6 +63,7 @@ func new_weather():
 		Global.soil -= 0.1
 		cloud_off()
 		rain_off()
+		bug()
 	elif weather == 6:
 		weather = 'lightrain'
 		Global.sunlight = 0.4
@@ -69,6 +71,7 @@ func new_weather():
 		Global.soil = 1
 		cloud_on()
 		rain_on()
+		rainlight()
 	elif weather == 7:
 		weather = 'cloudy'
 		Global.sunlight = 0.4
@@ -84,6 +87,7 @@ func new_weather():
 		cloud_on()
 		cloud_dark()
 		rain_on()
+		rainloud()
 	print(weather)
 	Global.temp_bonus = ((float(Global.temperature) / 30))
 	Global.weather = weather
@@ -96,6 +100,7 @@ func new_day():
 	Global.day = true
 	await get_tree().create_timer(22).timeout
 	Global.day = false
+	$sound/bugs.stop()
 	await get_tree().create_timer(16).timeout
 	Global.day = true
 	await get_tree().create_timer(2).timeout
@@ -155,3 +160,25 @@ func cloud_light():
 	$clouds/Node2D/cloud3.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 	$clouds/Node2D/cloud4.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 	$clouds/Node2D/cloud5.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+
+
+
+
+func rainlight():
+	$sound/rain.volume_db = linear_to_db(0.5)
+	$sound/rain.play()
+
+func rainloud():
+	$sound/rain.volume_db = linear_to_db(1)
+	$sound/rain.play()
+
+func bug():
+	$sound/bugs.volume_db = linear_to_db(1)
+	$sound/bugs.play()
+
+func soundset():
+	$sound/rain.play(0.0) 
+	$sound/rain.stop()
+	$sound/bugs.play(0.0)
+	$sound/bugs.stop()

@@ -34,6 +34,8 @@
 [ext_resource type="Script" uid="uid://grr1fisyiin7" path="res://code/ciel.gd" id="25_58x3g"]
 [ext_resource type="Texture2D" uid="uid://5pkdf1cma6v" path="res://assets/sky/cloud.png" id="26_58x3g"]
 [ext_resource type="Texture2D" uid="uid://bq3x2h7qhnj2t" path="res://assets/sky/rain.png" id="27_qj1jd"]
+[ext_resource type="AudioStream" uid="uid://72dvbq6wk6tu" path="res://assets/sound/rain.mp3" id="35_b7e0f"]
+[ext_resource type="AudioStream" uid="uid://bs632mr6nuas5" path="res://assets/sound/cicada.mp3" id="36_73rhe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -1050,6 +1052,15 @@ z_index = 7
 position = Vector2(506, 344)
 scale = Vector2(3.7481928, 1.1051561)
 texture = ExtResource("2_tircx")
+
+[node name="sound" type="Node2D" parent="Node2D/weather" unique_id=758543032]
+
+[node name="rain" type="AudioStreamPlayer2D" parent="Node2D/weather/sound" unique_id=1445807720]
+stream = ExtResource("35_b7e0f")
+autoplay = true
+
+[node name="bugs" type="AudioStreamPlayer2D" parent="Node2D/weather/sound" unique_id=263163854]
+stream = ExtResource("36_73rhe")
 
 [connection signal="pressed" from="Node2D/Stomata/Node2D/stomata" to="Node2D/Stomata" method="_on_stomata_pressed"]
 [connection signal="mouse_entered" from="Node2D/Plant/drag/drag/drag2" to="Node2D/Plant" method="_on_drag_2_mouse_entered"]

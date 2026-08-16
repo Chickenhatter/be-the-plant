@@ -69,3 +69,7 @@ func _on_weather_mouse_exited() -> void:
 	$weather/RichTextLabel.text = ''
 	$weather/RichTextLabel2.text = ''
 	$weather/RichTextLabel3.text = ''
+
+
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file('res://scenes/playing.tscn')
