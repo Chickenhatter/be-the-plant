@@ -72,4 +72,5 @@ func _on_weather_mouse_exited() -> void:
 
 
 func _on_start_pressed() -> void:
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file('res://scenes/playing.tscn')
