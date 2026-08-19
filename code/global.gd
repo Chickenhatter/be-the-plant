@@ -1,5 +1,8 @@
 extends Node
 
+var end = false
+
+
 var temperature = 20
 var soil = 0.5
 var day = true

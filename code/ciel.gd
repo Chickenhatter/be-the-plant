@@ -61,15 +61,12 @@ func _process(delta: float) -> void:
 		cloud_off()
 	
 	
-	if darkcloud == true:
-		cloud_dark()
-	else:
-		cloud_light()
+
 
 
 
 func new_weather():
-	darkcloud = false
+	cloud_light()
 	cloudup = false
 	soundset()
 	reset()
@@ -109,8 +106,8 @@ func new_weather():
 		Global.sunlight = 0.1
 		Global.temperature = 0 + randi_range(10,20)
 		Global.soil = 1.2
-		cloudup = false
-		darkcloud = true
+		cloudup = true
+		cloud_dark()
 		rainup = true
 		rainloud()
 	print(weather)
@@ -191,34 +188,37 @@ func rain_off():
 	$clouds/rain/rain12.self_modulate.a -= 0.016
 
 func cloud_dark():
-	$clouds/Node2D/cloud1.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
-	$clouds/Node2D/cloud2.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
-	$clouds/Node2D/cloud3.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
-	$clouds/Node2D/cloud4.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
-	$clouds/Node2D/cloud5.self_modulate = Color(0.5, 0.5, 0.5, 1.0)
+	$clouds/Node2D/cloud1.self_modulate = Color(0.5, 0.5, 0.5)
+	$clouds/Node2D/cloud2.self_modulate = Color(0.5, 0.5, 0.5)
+	$clouds/Node2D/cloud3.self_modulate = Color(0.5, 0.5, 0.5)
+	$clouds/Node2D/cloud4.self_modulate = Color(0.5, 0.5, 0.5)
+	$clouds/Node2D/cloud5.self_modulate = Color(0.5, 0.5, 0.5)
 
 func cloud_light():
-	$clouds/Node2D/cloud1.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-	$clouds/Node2D/cloud2.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-	$clouds/Node2D/cloud3.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-	$clouds/Node2D/cloud4.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-	$clouds/Node2D/cloud5.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud1.self_modulate = Color(1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud2.self_modulate = Color(1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud3.self_modulate = Color(1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud4.self_modulate = Color(1.0, 1.0, 1.0)
+	$clouds/Node2D/cloud5.self_modulate = Color(1.0, 1.0, 1.0)
 
 
 
 
 
 func rainlight():
-	$sound/rain.volume_db = linear_to_db(0.5)
 	$sound/rain.play()
+	var tween = create_tween()
+	tween.tween_property($sound/rain, "volume_db", linear_to_db(1), 1.0).from(linear_to_db(0.0001))
 
 func rainloud():
-	$sound/rain.volume_db = linear_to_db(1)
 	$sound/rain.play()
+	var tween = create_tween()
+	tween.tween_property($sound/rain, "volume_db", linear_to_db(1), 1.0).from(linear_to_db(0.0001))
 
 func bug():
-	$sound/bugs.volume_db = linear_to_db(1)
 	$sound/bugs.play()
+	var tween = create_tween()
+	tween.tween_property($sound/bugs, "volume_db", linear_to_db(0.7), 1.0).from(linear_to_db(0.0001))
 
 func soundset():
 	$sound/rain.play(0.0) 

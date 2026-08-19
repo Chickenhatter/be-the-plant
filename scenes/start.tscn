@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://g2rwhns3b1oa" path="res://assets/other/main_scene.png" id="1_jaeev"]
 [ext_resource type="Script" uid="uid://bjcf1kf52wu1h" path="res://code/buttons.gd" id="2_u80x2"]
 [ext_resource type="Texture2D" uid="uid://dag7fbiawikr8" path="res://assets/other/frame.png" id="3_bodal"]
+[ext_resource type="Texture2D" uid="uid://lw5jhdf52v06" path="res://assets/other/white.png" id="4_kdmts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe8vo"]
 size = Vector2(131, 85)
@@ -202,6 +203,36 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 theme_override_font_sizes/normal_font_size = 51
 text = "Start"
+
+[node name="Node2D" type="Node2D" parent="Node2D" unique_id=689477880]
+
+[node name="sides" type="Sprite2D" parent="Node2D/Node2D" unique_id=521439739]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(-286.87497, 217)
+scale = Vector2(1.383735, 1.5637721)
+texture = ExtResource("4_kdmts")
+
+[node name="sides2" type="Sprite2D" parent="Node2D/Node2D" unique_id=272924728]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(576.02466, -202.00693)
+scale = Vector2(-5.5423856, 0.55003107)
+texture = ExtResource("4_kdmts")
+
+[node name="sides3" type="Sprite2D" parent="Node2D/Node2D" unique_id=2011177511]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(1439, 185)
+scale = Vector2(1.383735, 1.5637721)
+texture = ExtResource("4_kdmts")
+
+[node name="sides4" type="Sprite2D" parent="Node2D/Node2D" unique_id=1513933937]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(576.20776, 849.99994)
+scale = Vector2(-5.5454526, 0.5500499)
+texture = ExtResource("4_kdmts")
 
 [connection signal="mouse_entered" from="Node2D/buttons/glycolysis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/buttons/glycolysis/Glycolysis" to="Node2D/buttons" method="_on_glycolysis_mouse_exited"]

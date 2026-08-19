@@ -82,9 +82,10 @@ func _on_drag_2_mouse_exited() -> void:
 
 func gamesend():
 	var tween = create_tween()
+	Global.end
 	tween.tween_property($sprites/main/Sprite2D, "self_modulate", Color(0, 0, 0), 2.0)
 	await get_tree().create_timer(2).timeout
-	get_tree().change_scene_to_file("res://test.tscn")
+	get_tree().change_scene_to_file("res://scenes/start.tscn")
 
 
 

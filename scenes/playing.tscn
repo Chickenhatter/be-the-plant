@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bq3x2h7qhnj2t" path="res://assets/sky/rain.png" id="27_qj1jd"]
 [ext_resource type="AudioStream" uid="uid://72dvbq6wk6tu" path="res://assets/sound/rain.mp3" id="35_b7e0f"]
 [ext_resource type="AudioStream" uid="uid://bs632mr6nuas5" path="res://assets/sound/cicada.mp3" id="36_73rhe"]
+[ext_resource type="Script" uid="uid://cccmy65vrksr1" path="res://code/stend.gd" id="37_5pxrs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrwy"]
 animations = [{
@@ -1061,6 +1062,53 @@ autoplay = true
 
 [node name="bugs" type="AudioStreamPlayer2D" parent="Node2D/weather/sound" unique_id=263163854]
 stream = ExtResource("36_73rhe")
+
+[node name="stend" type="Node2D" parent="Node2D" unique_id=784291339]
+script = ExtResource("37_5pxrs")
+
+[node name="start" type="Sprite2D" parent="Node2D/stend" unique_id=1362871132]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(557.75, 207.75)
+scale = Vector2(3.6879518, 1.5637721)
+texture = ExtResource("2_tircx")
+
+[node name="end" type="Sprite2D" parent="Node2D/stend" unique_id=1304099698]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 0)
+z_index = 100
+position = Vector2(557.75, 207.75)
+scale = Vector2(3.6879518, 1.5637721)
+texture = ExtResource("2_tircx")
+
+[node name="Node2D" type="Node2D" parent="Node2D/stend" unique_id=928274155]
+
+[node name="sides" type="Sprite2D" parent="Node2D/stend/Node2D" unique_id=197204398]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(-286.87497, 217)
+scale = Vector2(1.383735, 1.5637721)
+texture = ExtResource("2_tircx")
+
+[node name="sides2" type="Sprite2D" parent="Node2D/stend/Node2D" unique_id=500649669]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(576.02466, -202.00693)
+scale = Vector2(-5.5423856, 0.55003107)
+texture = ExtResource("2_tircx")
+
+[node name="sides3" type="Sprite2D" parent="Node2D/stend/Node2D" unique_id=1896016684]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(1439, 185)
+scale = Vector2(1.383735, 1.5637721)
+texture = ExtResource("2_tircx")
+
+[node name="sides4" type="Sprite2D" parent="Node2D/stend/Node2D" unique_id=614251354]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+z_index = 100
+position = Vector2(576.20776, 849.99994)
+scale = Vector2(-5.5454526, 0.5500499)
+texture = ExtResource("2_tircx")
 
 [connection signal="pressed" from="Node2D/Stomata/Node2D/stomata" to="Node2D/Stomata" method="_on_stomata_pressed"]
 [connection signal="mouse_entered" from="Node2D/Plant/drag/drag/drag2" to="Node2D/Plant" method="_on_drag_2_mouse_entered"]
