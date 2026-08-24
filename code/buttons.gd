@@ -72,5 +72,22 @@ func _on_weather_mouse_exited() -> void:
 
 
 func _on_start_pressed() -> void:
+	Global.start = true
+	reseter()
 	await get_tree().create_timer(1).timeout
+	Global.start = false
 	get_tree().change_scene_to_file('res://scenes/playing.tscn')
+
+func reseter():
+	Global.end = false
+	Global.temperature = 20
+	Global.soil = 0.5
+	Global.day = true
+	Global.leaf_scale = 0.5
+	Global.sunlight = 0.5
+	Global.temp_bonus = 0.5
+	Global.weather = 0
+	Global.glucose = 0.7
+	Global.carbondioxide = 0.5
+	Global.water = 0.5
+	Global.nitrogen = 0.5

@@ -10,6 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	Global.glucose -= 0.00014
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if inbox == true:
 			var direction = $drag/drag/drag/Icon.global_position.direction_to((get_global_mouse_position()))
@@ -82,7 +83,7 @@ func _on_drag_2_mouse_exited() -> void:
 
 func gamesend():
 	var tween = create_tween()
-	Global.end
+	Global.end = true
 	tween.tween_property($sprites/main/Sprite2D, "self_modulate", Color(0, 0, 0), 2.0)
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://scenes/start.tscn")
